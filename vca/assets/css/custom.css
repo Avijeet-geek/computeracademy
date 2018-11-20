@@ -1,0 +1,189 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.main-menu { float: right !important;}
+.fullwidthbanner-container .fullwidthabanner {
+    width: 100%;
+    position: relative;
+    margin-top: 50px !important;
+}
+.ls-container {
+    visibility: hidden;
+    position: relative;
+    margin-top: 60px !important;
+}
+h3.slide_typo { font-size: 5vw !important;  }
+.green{color: #007d51 !important;}
+.heading{text-transform: uppercase;}
+h1 span {color: #007d51 !important; }
+.bolt{font-size: 50px !important;}
+header#plain #logo_home h1 a, header.sticky #logo_home h1 a {
+    background-image: url(../images/logo.svg);
+}
+#logo {
+    margin-top: -28px !important;
+}
+.log{
+    width: 250px !important;
+    position: absolute !important;     z-index: 999 !important;
+}
+.main-menu ul li .menu-wrapper, .main-menu ul ul {
+    position: absolute;
+    border-top: 2px solid #1c3b86 !important;}
+    header#plain .main-menu>ul>li:hover>a{ color: #2080c5 !important;}
+.Greencol{
+    color:#117e57;
+}
+.GreencolBox{background:#117e57!important; }
+.foottext{
+    text-align: center;
+} 
+#social_footer {
+    border-top: 1px solid rgba(255,255,255,0) !important;
+}
+
+.boxcolor{
+    background:  grey ;
+   background: linear-gradient(to top, #EAEAEA, #DBDBDB, #F2F2F2, #f5f5f5)!important;
+   }
+.servicesfont{
+        font-family: inherit !important;
+        text-transform: uppercase;
+         font-weight: 700;
+        
+        font-size: 30px;
+        color:black!important;
+    margin-right: 96px;
+
+}
+.services{
+    text-align: center !important;
+}
+.iconcolor{color:black;}
+.iconbox li{padding: 0 83px 20px 0 !important}
+.iconbox li i{font-size: 53px !important;}
+.tape{ background:none;}
+
+@media (max-width: 991px){
+header#plain {
+    padding-bottom: 30px !important;}
+}
+@media (max-width: 991px){
+header #logo img.logo_normal, header #logo img.logo_sticky {
+    width: auto;
+    height: 90px; margin-top:10px;
+}
+}
+@media (max-width: 991px){
+.main-menu ul li.megamenu .menu-wrapper {
+    width: auto;
+    margin-top: 20px;
+    z-index: 999;
+    background:#fff;
+}
+}
+footer {
+    background: url(../images/footer.jpg) #333 !important;
+background-size:cover !important;
+}
+.features-content {
+    position: relative;
+    padding: 5% 100px 10% !important;}
+header#plain.sticky #logo .logo_sticky {
+   
+        z-index: 999 !important;
+    }
+
+
+/* Home Page  */
+.GreenHillHome{
+    background: #fff url(../img/NewPic/Home.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.homepopup{
+        background: #191818;
+    margin: 2%;
+    height: auto;
+    opacity: .9;
+    text-align: center;
+    color:white;
+    padding-bottom: 80px;
+}
+.homepopup .h1 , .h2 ,.h3{
+    color:white;
+    padding:20px;
+}
+.headline{
+background:#45b549;
+text-transform: uppercase;}
+.homepopup p{font-size:16px;}
+
+.homepopup indexP{
+    color:white;
+    padding:20px;}
+    .wishlist{width:50% !important; font-size:15px;top:5px !important;}
+    .strip_all_tour_list .wishlist:before, .wishlist:before {display:none !important;}
+    .wishlist a{color: #fff !important;} .wishlist a.btn_1{padding:0 !important;}
+    #price_single_main {
+        text-align: right;
+        padding-top: 25px;
+        font-weight: 400;
+        font-size: 30px;
+    }
+    
+    #tcb-testimonial-carousel {
+        margin-top: 30px;
+      }
+      #tcb-testimonial-carousel a {
+        color: #b20000;
+      }
+      #tcb-testimonial-carousel .text-brand {
+        color: #b20000;
+      }
+      #tcb-testimonial-carousel .carousel-indicators .active {
+        background: #b20000;
+      }
+      #tcb-testimonial-carousel .no-margin {
+        margin: 0;
+      }
+      #tcb-testimonial-carousel .carousel-indicators li {
+        border: 1px solid #ccc;
+      }
+      #tcb-testimonial-carousel .carousel-control {
+        color: #b20000;
+        width: 5%; top: 60% !important;
+      }
+      #tcb-testimonial-carousel .carousel-control:hover,
+      #tcb-testimonial-carousel .carousel-control:focus {
+        color: #b20000;
+      }
+      #tcb-testimonial-carousel .carousel-control.left,
+      #tcb-testimonial-carousel .carousel-control.right {
+        background-image: none;
+      }
+      #tcb-testimonial-carousel .item {
+        padding: 15px 40px;
+        background: #f8f8f8;
+      }
+      #tcb-testimonial-carousel .media-object {
+        margin: auto;
+      }
+      @media screen and (max-width: 768px) {
+        #tcb-testimonial-carousel .media-object {
+          margin-bottom: 15px;
+        }
+      }
+      .nobg-footer{background:none !important;     padding: 0 !important;}
+      .round{width:48px; height:48px; border-radius:50%;}
+      blockquote .small:before, blockquote footer:before, blockquote small:before {
+    content: '\2014 \00A0' !important; display:none;
+}
+@media (max-width: 767px){
+#top_line {
+    display: none;
+}
+}
+      
+    
+    

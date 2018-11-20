@@ -1,0 +1,48 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Mdl_services extends CI_Model
+{
+    private $table;
+    
+    function __construct()
+    {
+        parent::__construct();
+        $this->table = "services"; //view
+        
+     $this->db->query("CREATE TABLE IF NOT EXISTS `services` (
+            `id` int(11) NOT NULL auto_increment,
+            `s_id` int(11) NOT NULL,
+            `title` varchar(200) NOT NULL,
+            `desc` text NOT NULL,
+            `price` int(11) NOT NULL,
+            `timestamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+            PRIMARY KEY  (`id`)
+        ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;")   ;
+    }
+    function view_data($where=null,$select)
+    {
+        $this->db->select($select);
+        if($where)
+            $this->db->where($where);
+        $this->db->order_by('id',"desc");
+        return $this->db->get( $this->table);
+    }
+    function add_data($data)
+    {
+        $a=$this->db->insert($this->table,$data);
+        return $this->db->affected_rows($a);
+    }
+    function update_data($where,$data)
+    {
+        $this->db->where($where);
+        $a=$this->db->update($this->table,$data);
+        return $this->db->affected_rows($a);
+    }
+    function delete_data($where)
+    {
+        $this->db->where($where);
+        $a=$this->db->delete($this->table);
+        return $this->db->affected_rows($a);
+    }
+    
+}
+?>

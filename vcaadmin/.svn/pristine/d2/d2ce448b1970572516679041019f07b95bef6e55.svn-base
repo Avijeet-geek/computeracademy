@@ -1,0 +1,91 @@
+//blank line is required
+app.controller('ctrl_page',function($scope,$http){
+	$http.get('login/check_valid_session').success (function(data) {if(data!=1){window.location.assign('<?=site_url("login")?>');}});
+	
+	$scope.loader=function(){
+		$http.get("page/view_data").success(function(data){
+			console.log(data);
+			$scope.datadb=data;
+		})
+		
+		
+	}
+	$http.get("menu/view_data?data=menu_id,type").success(function(data){
+		$scope.pages=data;
+	})
+	$http.get("slider/view_data?data=title,slider_id").success(function(data){
+		$scope.sliders=data;
+	})
+	$http.get("blocks/view_data?data=name,blocks_id").success(function(data){
+		$scope.blocks=data;
+	})
+	
+	$scope.fetch_menu=function(type){//fetching data from menu for showning menu type services
+		$http.get("menu/view_data?type="+type).success(function(data){
+			$scope.menus=data;
+		})
+	}
+	
+	$scope.loader();
+	$scope.update_call=function(y){
+		$scope.x=y;
+	}
+	
+	$scope.filter_new=function(){
+		$scope.x={};
+	}
+	$scope.save_data=function(x){
+		$('#submitbtn').attr('disabled',true);
+		$('#form1').ajaxForm({
+			type: "POST",
+			url: "page/save_data",
+			beforeSend: function()
+			{
+			// $('#submitbtn').attr('disabled',true);
+				$('#webprogress').css('display','inline');
+			},
+			success: function(data){
+				console.log(data);
+				if(data=="1")
+				{
+					$scope.x={};
+					messages("success", "Success!","page Saved Successfully", 3000);
+					$scope.loader();
+					
+				}
+				else if(data=="0")
+				{
+					messages("warning", "Info!","No Data Affected", .3000);
+				}
+				else
+				{
+					messages("danger", "Warning!",data, 8000);
+				}
+				$('#webprogress').css('display','none');
+//				$('#submitbtn').attr('disabled',false);
+			}
+		});
+	}
+	$scope.delete_data=function(id)
+	{
+		if(confirm("Deleting menu may hamper your data associated with it."))
+		{
+			if(confirm("Are you Sure to DELETE ??"))
+			{
+				$http.get("page/delete_data?id="+id).success(function(data){
+					console.log(data);
+					if(data=="1")
+					{
+						messages("success", "Success!","page Deleted Successfully", 3000);
+					}
+					else
+					{
+						messages("danger", "Warning!","page not Deleted", 4000);
+					}
+					$scope.loader();
+				})
+			}
+		}
+	}
+	
+});

@@ -1,0 +1,88 @@
+                <div class="inner-content">
+                    <div class="panel theme-panel">
+                        <div class="panel-heading">
+                            <span class="panel-title"><h2>Dashboard</h2></span>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row clearfix">
+                               
+                                <div class="col-md-3 column" ui-sref="questions_manager">
+                                    <div class="feature-box box-shadow">
+                                        <span class="feature-icon"><i class="fa fa-edit"></i></span>
+                                        <h5>Total Questions</h5>
+                                        <label><b>{{question_row}}</b> Questions</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 column" ui-sref="exam_master">
+                                    <div class="feature-box box-shadow">
+                                        <span class="feature-icon"><i class="fa fa-bullseye"></i></span>
+                                        <h5>Total Exams</h5>
+                                        <label><b>{{exam_row}}</b>Exams</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 column" ui-sref="department">
+                                    <div class="feature-box box-shadow">
+                                        <span class="feature-icon"><i class="fa fa-flag"></i></span>
+                                        <h5>Total Trades</h5>
+                                        <label><b>{{department_row}}</b> Trades</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 column" ui-sref="gallery">
+                                    <div class="feature-box box-shadow">
+                                        <span class="feature-icon"><i class="fa fa-camera"></i></span>
+                                        <h5>Total Pictures</h5>
+                                        <label><b>{{gallery_row}}</b> Images</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 column" ui-sref="user_manager">
+                                    <div class="feature-box box-shadow">
+                                        <span class="feature-icon"><i class="fa fa-user"></i></span>
+                                        <h5>Total Users</h5>
+                                        <label><b>{{user_row}}</b> Army Users</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 column" ui-sref="news">
+                                    <div class="feature-box box-shadow">
+                                        <span class="feature-icon"><i class="fa fa-bullhorn"></i></span>
+                                        <h5>Total News</h5>
+                                        <label><b>{{news_row}}</b> News</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 column" ui-sref="uploads">
+                                    <div class="feature-box box-shadow">
+                                        <span class="feature-icon"><i class="fa fa-upload"></i></span>
+                                        <h5>Total Uploads</h5>
+                                        <label><b>{{uploads_row}}</b> Uploads</label>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-3 column" ui-sref="slider">
+                                    <div class="feature-box box-shadow">
+                                        <span class="feature-icon"><i class="fa fa-sliders"></i></span>
+                                        <h5>Total Slides</h5>
+                                        <label><b>{{slider_row}}</b> Slides</label>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <pre>
+                    <?php 
+                    print_r($this->session->userdata());
+                    ?>
+                    </pre>
+</div>
+<style>
+.column{
+    cursor:pointer;
+}
+</style>

@@ -1,0 +1,63 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Services_head extends MX_Controller
+{
+    //wGtRkO8VoEyUjS
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->model('mdl_service_head');
+    }
+    function index()
+    {
+        $this->load->view('form');
+    }
+    function save()
+    {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules("name","Service Name","required|trim");
+        $this->form_validation->set_rules("description","Description","required|max_length[500]");
+        
+        if ($this->form_validation->run()==TRUE)
+        {
+            $data['name']=ucfirst($_POST['name']);
+            $data['description']=$_POST['description'];
+            
+            if (@$_POST['id']){//update
+                $where['s_id']=$_POST['id'];
+                echo $this->mdl_service_head->update_data($where,$data);
+            }else{//add
+                echo $this->mdl_service_head->add_data($data);
+            }
+        }
+        else
+            echo validation_errors();
+    }
+    function view()
+    {
+        $where=null;
+        if (isset($_GET['id']))
+	         $where['s_id']=$_GET['id'];
+        
+        if (isset($_GET['data']))
+	        $select=$_GET['data'];
+	    else $select="*";
+	    
+        $return=$this->mdl_service_head->view_data($where,$select);
+        $this->output->set_content_type('application/json')->set_output(json_encode($return->result_array()));
+    }
+    function delete()
+    {
+        if (isset($_GET['id']) && $_GET['id'])
+        {
+            $where['s_id']=$_GET['id'];
+            $object=json_encode($this->mdl_service_head->view_data($where,"*")->result());
+            $data_title= "Service Delete";
+    
+            $this->load->module("logs");
+            if ($this->logs->add_data($data_title,$object)) {
+                echo $this->mdl_service_head->delete_data($where);
+            }
+        }
+    }
+}
+?>

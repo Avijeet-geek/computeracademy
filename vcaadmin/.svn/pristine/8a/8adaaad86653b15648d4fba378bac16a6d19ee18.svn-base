@@ -1,0 +1,55 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class App extends MX_Controller
+{
+    function index()
+    {
+        if ($this->session->userdata('username'))
+        {
+            $this->load->view('header');
+            $this->load->view('navigation');
+            $this->load->view('body');
+            $this->load->view('footer');
+        }
+        else redirect('login');
+    }
+    function login_layout($data)
+    {
+        $this->load->view('header',$data);
+        $this->load->view('body');
+        $this->load->view('footer');
+    }
+    
+    function app_main()
+    {
+		
+        if ($this->session->userdata('username'))
+        {
+            //app
+            $this->load->view('main/main.js');
+            //controllers
+			
+                $this->load->view('login/ctrl_login.js');
+                $this->load->view('menu/ctrl_menu.js');
+                $this->load->view('service_head/ctrl_service_head.js');
+                $this->load->view('services/ctrl_services.js');
+                $this->load->view('plans/ctrl_plans.js');
+                 $this->load->view('dashboard/ctrl_dashboard.js');
+                 $this->load->view('page/ctrl_page.js');
+                 $this->load->view('contact/ctrl_contact.js');
+                 $this->load->view('admin_profile/ctrl_admin.js');
+                 $this->load->view('enquiry/ctrl_enquiry.js');
+
+        }
+        
+        else redirect('login');
+    }
+    function pagination()
+    {
+        $this->load->view('dirPagination.tpl.html');
+    }
+    function help()
+    {
+        $this->load->view('help/help');
+    }
+    
+}

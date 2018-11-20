@@ -1,0 +1,138 @@
+<div class="heading">
+    <ol class="breadcrumb">
+      <li><a href="#/">Dashboard</a></li> 
+      <li><a href="javascript:void(0)">Admin profile</a></li>
+    </ol>
+</div>
+
+<div class="col-sm-12 well">
+     <div class="col-sm-6">
+     
+
+     
+       <form action="" id="form1" method="post">
+         <input name="id"  ng-model="y.id" hidden>
+            <div class="clearfix"></div>
+
+             
+            <div class="col-sm-2 ">
+                <label>Business Name</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="business_name" class="form-control" ng-model="y.business_name"  autofocus required>               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 ">
+                <label>Email</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="admin_email" class="form-control" ng-model="y.admin_email"   required>               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 ">
+                <label>Logo</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="logo" class="form-control" ng-model="y.logo" required>               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 ">
+                <label>Phone</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="phone" class="form-control" ng-model="y.phone" required>               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 ">
+                <label>Address</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="address" class="form-control" ng-model="y.address" required>               
+            </div>
+             <div class="clearfix"></div>
+             
+             <div class="col-sm-2 ">
+                <label>Gst No</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="gst_no" class="form-control" ng-model="y.gst_no"  required>               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 ">
+                <label>Bank Ac No</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="bank_acc" class="form-control" ng-model="y.bank_acc" required>               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 "> 
+                <label>Ifsc Code</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="ifsc_code" class="form-control" ng-model="y.ifsc_code"  required>               
+            </div>
+              <div class="clearfix"></div>
+             <div class="col-sm-2 ">
+                <label>Facebook</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="facebook" class="form-control" ng-model="y.facebook"  required>              
+            </div>
+            <div class="clearfix"></div> 
+            
+                  <div class="col-sm-2 ">
+                <label>Twitter</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="twitter" class="form-control" ng-model="y.twitter" required>              
+            </div>
+            <div class="clearfix"></div> 
+                
+                  <div class="col-sm-2 ">
+                <label>Instagram</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="instagram" class="form-control" ng-model="y.instagram" required>              
+            </div>
+            <div class="clearfix"></div> 
+            
+                  <div class="col-sm-2 ">
+                <label>Whats App</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="whatsapp" class="form-control" ng-model="y.whatsapp" required>              
+            </div>
+            <div class="clearfix"></div> 
+            
+                  <div class="col-sm-2 ">
+                <label>Youtube</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="youtube" class="form-control" ng-model="y.youtube" required>              
+            </div>
+            <div class="clearfix"></div> 
+            
+                  <div class="col-sm-2 ">
+                <label>Google +</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="gplus" class="form-control" ng-model="y.gplus" required>              
+            </div>
+            <div class="clearfix"></div> 
+            
+      
+
+            <div class="col-sm-12"> 
+                <div id="webprogress" style="display: none">
+                    <img src="<?=base_url()?>/assets/images/progress/load1.gif">
+                </div>
+               <button type="submit" id="submitbtn" accesskey="s" ng-click="save_data(y)" class="btn btn-info"  ng-disabled="form1.$invalid"><u><b>S</b></u>ave</button>
+               <a class="btn btn-default" accesskey="c" ng-click="filter_new()"><u><b>C</b></u>lear</a>
+               <br><br> 
+            </div>
+        </form>
+    </div>
+
+   
+ <?php include 'data.php';?>
+</div>  

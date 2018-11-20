@@ -1,0 +1,74 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class App extends MX_Controller
+{
+    function index()
+    {
+        if ($this->session->userdata('username'))
+        {
+            $this->load->view('header');
+            $this->load->view('navigation');
+            $this->load->view('body');
+            $this->load->view('footer');
+        }
+        else redirect('login');
+    }
+    function login_layout($data)
+    {
+        $this->load->view('header',$data);
+        $this->load->view('body');
+        $this->load->view('footer');
+    }
+    
+    function app_main()
+    {
+		
+        if ($this->session->userdata('username'))
+        {
+            //app
+            $this->load->view('main/main.js');
+            //controllers
+			
+            $this->load->view('login/ctrl_login.js');
+            $this->load->view('menu/ctrl_menu.js');
+//             $this->load->view('setting_api/ctrl_setting_api.js');
+//             $this->load->view('filemanager/ctrl_filemanager.js');
+//             $this->load->view('developer/ctrl_developer.js');
+//             $this->load->view('blog/ctrl_blog.js');
+//             $this->load->view('setting_page/ctrl_setting_page.js');
+//             $this->load->view('item_tax/ctrl_item_tax.js');
+//             $this->load->view('item_filter/ctrl_item_filter.js');
+//             $this->load->view('change_logo/ctrl_change_logo.js');
+            $this->load->view('dashboard/ctrl_dashboard.js');
+//             $this->load->view('slider/ctrl_slider.js');
+//             $this->load->view('formbuilder/ctrl_form.js');
+//             $this->load->view('sets_profile/ctrl_sets_profile.js');
+//             $this->load->view('testimonial/ctrl_testimonial.js');
+//             $this->load->view('blocks/ctrl_blocks.js');
+            $this->load->view('category/ctrl_cat.js');
+            $this->load->view('subcategory/ctrl_subcat.js');
+            $this->load->view('page/ctrl_page.js');
+            $this->load->view('items/ctrl_items.js');
+//             $this->load->view('socialmedia/ctrl_socialmedia.js');
+//             $this->load->view('album/ctrl_album.js');
+            $this->load->view('news/ctrl_news.js');
+//             $this->load->view('gallery/ctrl_gallery.js');
+//              $this->load->view('slider_img/ctrl_slider_img.js'); 
+            $this->load->view('logs/ctrl_logs.js');
+            $this->load->view('users/ctrl_users.js');
+            $this->load->view('user_privileges/ctrl_user_privileges_master.js');
+            $this->load->view('settings/ctrl_settings.js');
+//             $this->load->view('temp_form_type/ctrl_temp_form_type.js'); 
+        }
+        
+        else redirect('login');
+    }
+    function pagination()
+    {
+        $this->load->view('dirPagination.tpl.html');
+    }
+    function help()
+    {
+        $this->load->view('help/help');
+    }
+    //Copyright @ Groveus (www.groveus.com)
+}

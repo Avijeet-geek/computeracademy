@@ -1,0 +1,58 @@
+<!-- <div class="col-sm-6"> -->
+<!--     <div class="table_horizontal"> -->
+<!-- 		<div class="input-group custom_addon"> -->
+           
+<!-- 				<input type="text" ng-model="search_text" placeholder="Search here..."> -->
+<!-- 			</div> -->
+		</div>
+		<div class="table-data">
+			<table class="table table-hover">
+<!-- 				<thead> -->
+<!-- 					<tr class="active"> -->
+<!-- 						<th class="text-center">Business Name</th> -->
+<!-- 						<th class="text-center">Email</th> -->
+<!-- 						<th class="text-center">Logo</th> -->
+<!--                         <th class="text-center">Phone</th> -->
+<!--                         <th class="text-center">Address</th> -->
+<!-- 						<th class="text-center">Gst No</th> -->
+<!-- 						<th class="text-center">Bank Ac No</th> -->
+<!--                         <th class="text-center">Ifsc Code</th> -->
+<!--                         <th class="text-center">Facebook</th> -->
+<!-- 						<th class="text-center">Twitter</th> -->
+<!-- 						<th class="text-center">Instagram</th> -->
+<!--                         <th class="text-center">Whats App</th> -->
+<!--                         <th class="text-center">Youtube</th> -->
+<!--                         <th class="text-center">Google Plus</th> -->
+					   
+<!-- 					</tr> -->
+<!-- 				</thead> -->
+				<!-- <tbody>
+					<tr dir-paginate="y in datadb | filter: search_text | itemsPerPage: 5" >
+						<td>{{y.business_name}}</td>
+						<td>{{y.admin_email}}</td>
+						<td>{{y.logo}}</td>
+						<td>{{y.phone}}</td>
+						<td>{{y.address}}</td>
+						<td>{{y.gst_no}}</td>
+						<td>{{y.bank_acc}}</td>
+						<td>{{y.ifsc_code}}</td>
+						<td>{{y.facebook}}</td>
+						<td>{{y.twitter}}</td>
+						<td>{{y.instagram}}</td>
+						<td>{{y.whatsapp}}</td>
+						<td>{{y.youtube}}</td>
+						<td>{{y.gplus}}</td>
+						<td>
+						  <a href="javascript:void(0)" ng-click="update(y)">
+    						<span class="fa fa-pencil fa-2x"></span></a>
+    						&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" ng-click="delete_data(y.s_id)">
+    						<span class="fa fa-trash"></span></a>               
+						</td>
+					</tr>
+				</tbody> -->
+			</table>
+        </div>
+        <div class="col-sm-12">
+            <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="app/pagination"></dir-pagination-controls>
+        </div>
+   </div>

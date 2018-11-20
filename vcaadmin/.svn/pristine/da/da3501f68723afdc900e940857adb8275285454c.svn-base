@@ -1,0 +1,29 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+class Dashboard extends MX_Controller
+{
+    //wGtRkO8VoEyUjS   
+    function index()
+    {
+        
+    }
+    function admin()
+    {
+        $this->load->view('view');
+    }
+    function fetch_cards_data()
+    {
+        $data=array(
+            "department_row"=>$this->db->get('department')->num_rows(),
+            "exam_row"=>$this->db->get('exam_master')->num_rows(),
+            "question_row"=>$this->db->get('questions_manager')->num_rows(),
+            "user_row"=>$this->db->get('user_manager')->num_rows(),
+            "gallery_row"=>$this->db->get('gallery')->num_rows(),
+            "news_row"=>$this->db->get('news')->num_rows(),
+            "uploads_row"=>$this->db->get('uploads')->num_rows(),
+            "slider_row"=>$this->db->get('slider')->num_rows(),
+        );
+        $this->output->set_content_type('application/json')->set_output(json_encode($data));
+    }
+    
+    
+}

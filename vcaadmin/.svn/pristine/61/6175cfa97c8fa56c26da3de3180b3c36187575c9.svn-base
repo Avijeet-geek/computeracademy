@@ -1,0 +1,152 @@
+<div class="heading">
+    <ol class="breadcrumb">
+      <li><a href="#/">Dashboard</a></li> 
+      <li><a href="javascript:void(0)">Admin profile</a></li>
+    </ol>
+</div>
+
+<div class="col-sm-12 well">
+     <div class="col-sm-16">
+     
+
+     
+       <form action="" id="form1" method="post">
+         <input name="id"  ng-model="y.id" hidden>
+            <div class="clearfix"></div>
+
+             
+            <div class="col-sm-2 ">
+                <label>Business Name</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="business_name" class="form-control" ng-model="y.business_name"  autofocus required style="width:400px;">               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 ">
+                <label>Email</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="admin_email" class="form-control" ng-model="y.admin_email" style="width:400px;"  required>               
+            </div>
+             <div class="clearfix"></div>
+           <div class="col-sm-2">
+			<label>Select Image</label> url? <input type="checkbox" ng-model="y.url_type" style="width: 20px; height: 20px; border: 0px; shadow: none"
+				ng-true-value="'1'" ng-false-value="'0'">
+		</div>
+		<div class="col-sm-4" ng-if="y.url_type!='1'">
+			<input type="file" name="image">
+			<p class="help-block" style="font-size: 12px">Select any picture to view on your page.</p>
+		</div>
+		<div class="col-sm-4" ng-if="y.url_type=='1'">
+			<input name="image_url" class="form-control"
+				placeholder="Enter image URL">
+		</div>
+
+		<input ng-model="y.image" name="old_image" hidden>
+
+		<div class="col-sm-3" ng-show="y.image">
+			<img
+				src="<?=base_url("assets/website/uploads/page/thumb")?>/{{y.image}}"
+				class="img-responsive" style="height: 150px">
+		</div>
+
+		<div class="clearfix"></div>
+           
+             <div class="clearfix"></div>
+            <div class="col-sm-2 ">
+                <label>Phone</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="phone" class="form-control" ng-model="y.phone" style="width:400px;" required>               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 ">
+                <label>Address</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="address" class="form-control" ng-model="y.address" style="width:400px;" required>               
+            </div>
+             <div class="clearfix"></div>
+             
+             <div class="col-sm-2 ">
+                <label>Gst No</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="gst_no" class="form-control" ng-model="y.gst_no" style="width:400px;"  required>               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 ">
+                <label>Bank Ac No</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="bank_acc" class="form-control" ng-model="y.bank_acc" style="width:400px;" required>               
+            </div>
+             <div class="clearfix"></div>
+            <div class="col-sm-2 "> 
+                <label>Ifsc Code</label>
+            </div>
+            <div class="col-sm-10">
+                <input name="ifsc_code" class="form-control" ng-model="y.ifsc_code" style="width:400px;"  required>               
+            </div>
+              <div class="clearfix"></div>
+             <div class="col-sm-2 ">
+                <label>Facebook</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="facebook" class="form-control" ng-model="y.facebook" style="width:400px;"  required>              
+            </div>
+            <div class="clearfix"></div> 
+            
+                  <div class="col-sm-2 ">
+                <label>Twitter</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="twitter" class="form-control" ng-model="y.twitter" style="width:400px;" required>              
+            </div>
+            <div class="clearfix"></div> 
+                
+                  <div class="col-sm-2 ">
+                <label>Instagram</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="instagram" class="form-control" ng-model="y.instagram" style="width:400px;" required>              
+            </div>
+            <div class="clearfix"></div> 
+            
+                  <div class="col-sm-2 ">
+                <label>Whats App</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="whatsapp" class="form-control" ng-model="y.whatsapp" style="width:400px;" required>              
+            </div>
+            <div class="clearfix"></div> 
+            
+                  <div class="col-sm-2 ">
+                <label>Youtube</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="youtube" class="form-control" ng-model="y.youtube" style="width:400px;" required>              
+            </div>
+            <div class="clearfix"></div> 
+            
+                  <div class="col-sm-2 ">
+                <label>Google +</label>
+            </div>
+            <div class="col-sm-10">
+                  <input name="gplus" class="form-control" ng-model="y.gplus" style="width:400px;" required>              
+            </div>
+            <div class="clearfix"></div> 
+            <div class="col-sm-12"> 
+                <div id="webprogress" style="display: none">
+                    <img src="<?=base_url()?>/assets/images/progress/load1.gif">
+                </div>
+               <button type="submit" id="submitbtn" accesskey="s" ng-click="save_data(y)" class="btn btn-info"  ng-disabled="form1.$invalid"><u><b>S</b></u>ave</button>
+               <a class="btn btn-default" accesskey="c" ng-click="filter_new()"><u><b>C</b></u>lear</a>
+               <br><br> 
+            </div>
+        </form>
+    </div>
+
+   
+ <?php include 'data.php';?>
+</div>  
